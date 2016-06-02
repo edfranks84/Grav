@@ -1,0 +1,29 @@
+<section class="portfolio">
+	<div class="portfolio-title">
+		{{ page.content }}
+	</div>
+	<div class="portfolio-categories">
+		<h3>Choose Category</h3>
+		{% for item in page.header.categories %}
+			<ul>
+				{% if item.name  %}
+					<li>{{ item.name }}</li>
+				{% endif %}
+			</ul>
+		{% endfor %}
+	</div>
+	<div class="portfolio-images">
+		{% for work in page.header.gallery %}
+			<div class="portfolio-image">
+				<a href="{{ work.link }}" class="portfolio_item wow fadeInUp animated"">
+					<img src="{{ page.media.images[work.image].url }}">
+					<div class="portfolio_item_hover">
+						<div class="item__title">
+							<span>{{ work.title }}</span>
+						</div>
+					</div>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+</section>

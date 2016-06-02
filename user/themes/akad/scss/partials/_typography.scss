@@ -1,0 +1,79 @@
+/* ---------------------------------------------- *\
+
+  Partial: typography
+
+  I set all typographic styles here. First we list our variables such as fonts (maybe we're using some @font-face) and
+  additionally and maps we might want to use. Then we specificy the typographic scales we want.
+
+\* ---------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	margin-bottom: 0.75em;
+}
+
+h1{
+
+}
+
+h2{
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #60606e;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+h3{
+	font-size: 30px;
+    margin-bottom: 50px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+h4{
+	font-size: 24px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h5{
+    font-size: 19px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+h6{
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+p{
+	margin-bottom: ms(2);
+	font-size: 13px;
+	line-height: 2;
+	color: #888;
+	font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+strong{
+	// change if using @fontface
+	font-weight: bold;
+}
+
+em{
+	// change if using @fontface
+	font-style: italic;
+}

@@ -1,0 +1,24 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<section class="main-content">
+	<div class="sections__intro">
+		{{ page.content }}
+	</div>
+	<div class="sections__wrap">
+		{% for item in page.header.sections %}	
+			<div class="sections__item">
+			
+				{% if item.image %}
+					<div class="sections__image" style="background-image: url({{ page.media.images[item.image].url }})"></div>
+				{% endif %}
+				<div class="sections__content">
+					<h2>{{ item.title }}</h2>
+					<p>{{ item.content }}
+				</div>
+			
+			</div>
+		{% endfor %}
+	</div>
+</section>
+{% endblock %}

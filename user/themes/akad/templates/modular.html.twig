@@ -1,0 +1,43 @@
+{% extends 'partials/base.html.twig' %}
+
+{% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+{% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+
+{% block content %}
+    {{ page.content }}
+    <div id="content">
+        {% for module in page.collection() %}
+                {{ module.content }}
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    {{ parent() }}
+        <script type="text/javascript" charset="utf-8">
+		$(window).load(function() {
+
+			// initialize isotope
+			var $container = $('.portfolio-images');
+			$container.isotope({
+				filter: '*',
+			});
+		 
+			$('.portfolio_filter a').click(function(){
+				$('.portfolio_filter .active').removeClass('active');
+				$(this).addClass('active');
+		 
+				var selector = $(this).attr('data-filter');
+				$container.isotope({
+					filter: selector,
+					animationOptions: {
+						duration: 500,
+						animationEngine : "jquery"
+					}
+				});
+				return false;
+			}); 
+		});
+	</script>
+
+{% endblock %}

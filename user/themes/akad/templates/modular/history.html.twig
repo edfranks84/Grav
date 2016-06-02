@@ -1,0 +1,13 @@
+	<div class="history">
+		<div class="history__image">
+			{% for item in page.header.history %}
+				{% if item.image %}
+					<img src="{{ page.media.images[item.image].url }}">
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="history__content">
+			{{ page.content }}
+		</div>
+	</div>
+</section>

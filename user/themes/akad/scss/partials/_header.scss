@@ -1,0 +1,152 @@
+header{
+	display: flex;	
+	width: 100%;
+	max-width: 1600px;
+	margin: auto;
+	padding: 1em 2em 1em;
+	position: fixed;
+	height: 4em;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background-color: rgba(255,255,255,0.75);
+	.active & {
+		z-index: 10;
+		background: transparent;
+		.logo{
+			display: none;
+			@include respond-to(640){
+				display: block;
+			}
+		}
+	}
+}
+.logo{
+	width: 5em;
+}
+.main-nav{
+	flex: 1;
+	align-self: flex-end;
+	display: none;
+	@include respond-to(640){
+		display: block;
+	}
+}
+.navigation{
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 1em;
+	li{
+		display: inline-block;
+		padding: 0 0.5em;
+		text-transform: uppercase;
+		font-size: 12px;
+		a{
+			color: #666;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 700;
+			font-size: 12px;
+		}
+	}
+}
+.menu-btn{
+	width: 50px;
+	align-self: flex-end;
+	display: flex;
+	justify-content: flex-end;
+	flex: 1;
+	position: relative;
+    top: 6px;
+	@include respond-to(640){
+		display: none;
+	}
+	.contain {
+	  width: 50px;
+	  height: 40px;
+	  //margin: 40px auto;
+	  cursor: pointer;
+	       max-width: none;
+     margin-left: 0;
+     margin-right: 0;
+     min-width: 0;
+	}
+
+	.burger {
+	  width: 30px;
+	  height: 5px;
+	  background: turquoise;
+	  position: relative;
+	  border-radius: 5px;
+	  margin: 0 auto;
+	  top: 20px;
+	  -webkit-transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+	  transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+	  -webkit-transform-origin: 100% 0%;
+	          transform-origin: 100% 0%;
+	}
+	.burger:before {
+	  content: '';
+	  width: 30px;
+	  height: 5px;
+	  background: turquoise;
+	  position: relative;
+	  display: block;
+	  top: -10px;
+	  border-radius: 5px;
+	  -webkit-transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+	  transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+	}
+	.burger:after {
+	  content: '';
+	  width: 30px;
+	  height: 5px;
+	  background: turquoise;
+	  position: relative;
+	  display: block;
+	  top: 5px;
+	  border-radius: 5px;
+	  -webkit-transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+	  transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+	}
+	.active & {
+		top: 0;
+		.burger {
+		  -webkit-transform: scale(1.5);
+		          transform: scale(1.5);
+		  border-radius: 200%;
+		  height: 40px;
+		  width: 40px;
+		  background: none;
+		  border: 4px solid turquoise;
+		  -webkit-transform-origin: 50% 0%;
+		          transform-origin: 50% 0%;
+		  top: -10px;
+		  padding-top: 14px;
+		  padding-left: 3px;
+		  -webkit-transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+		  transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+		}
+	
+		.burger:before {
+		  -webkit-transform: rotate(45deg) scale(0.8);
+		          transform: rotate(45deg) scale(0.8);
+		  -webkit-transform-origin: 45% 9%;
+		          transform-origin: 45% 9%;
+		  top: 0;
+		  opacity: 1;
+		  -webkit-transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+		  transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+		}
+	
+		.burger:after {
+		  -webkit-transform: rotate(-45deg) scale(0.8);
+		          transform: rotate(-45deg) scale(0.8);
+		  -webkit-transform-origin: 25% 0%;
+		          transform-origin: 25% 0%;
+		  top: 0;
+		  opacity: 1;
+		  -webkit-transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+		  transition: 0.3s all cubic-bezier(0.17, 0.67, 0.1, 1.23);
+		}
+	}
+}

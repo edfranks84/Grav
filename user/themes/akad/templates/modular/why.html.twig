@@ -1,0 +1,30 @@
+<section class="why">
+	<div class="why__main-title">
+		{{ page.content }}
+	</div>
+	<div class="why__wrap">
+		<div class="why__lists">
+			{% for item in page.header.skills %}
+				<div class="list">
+		        	{% if item.title  %}
+			            <div class="why__title">{{ item.title }}</div>
+		    	    {% endif %}
+		        	<ul>
+						{% for i in item.items %}
+							{% if i.name  %}
+								<li>{{ i.name }}</li>
+							{% endif %}	
+						{% endfor %}
+		        	</ul>
+	        	</div>
+	        {% endfor %}
+		</div>
+		<div class="why__image">
+			{% for item in page.header.whyImage %}
+				{% if item.image %}
+					<img src="{{ page.media.images[item.image].url }}">
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</section>

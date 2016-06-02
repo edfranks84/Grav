@@ -1,0 +1,40 @@
+title: contact-info
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/contact-info
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/contact-info
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        sections:
+          type: tab
+          title: Info
+          fields:
+            header.phone:
+              name: phone
+              type: text
+              label: phone
+            header.email:
+              name: email
+              type: text
+              label: email
+            header.address:
+              name: address
+              type: text
+              label: address  
+
+              
+

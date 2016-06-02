@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <meta charset="utf-8" />
+            <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+            {% include 'partials/metadata.html.twig' %}
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+            <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+            <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+            {% block stylesheets %}
+
+                {% do assets.add('theme://css/my_project.css',101) %}
+
+                {{ assets.css() }}
+            {% endblock %}
+
+        {% endblock head %}
+    </head>
+
+    <body>
+
+        {% block header %}
+             {% include 'partials/header.html.twig' %}
+        {% endblock %}
+
+        {% block body %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+
+        {% block footer %}
+             {% include 'partials/footer.html.twig' %}
+        {% endblock %}
+
+        <div class="mobile-menu">
+            {% include 'partials/navigation.html.twig' %}
+        </div>
+
+        {% block bottom %}
+            {% do assets.add('theme://js/jquery-2.1.4.min.js', 101) %}
+            {% do assets.add('theme://js/isotope.pkgd.min.js') %}
+            {{ assets.js() }}
+
+            <script type="text/javascript" charset="utf-8">
+                $(window).load(function() {          
+                    $('.menu-btn').click(function(){
+                      $('body').toggleClass("active");
+                    });
+                });
+            </script>
+        {% endblock %}
+
+    </body>
+</html>

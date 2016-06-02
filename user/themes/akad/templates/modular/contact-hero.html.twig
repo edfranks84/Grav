@@ -1,0 +1,19 @@
+<section class="main-content">
+    <div class="inner-hero__content">
+        <div class="inner-hero__content--inner">
+	        {% for item in page.header.hero %}
+	        	<div class="inner-hero-item">
+			        {% if item.eyebrow  %}
+			            <div class="hero__eyebrow">{{ item.eyebrow }}</div>
+		    	    {% endif %}
+		        	{% if item.heading %}
+		            	<div class="hero__heading-wrap">
+			            	<div class="hero__heading">{{ item.heading }}</div>
+			            </div>
+		        	{% endif %}
+
+	        {% endfor %}
+	        {{ page.content }}
+        </div>
+    </div>
+</section>

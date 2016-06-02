@@ -1,0 +1,21 @@
+<footer class="footer">
+	<div class="footer-wrap">
+		<ul class="footer-nav">
+	        {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+	        {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+	        {% for page in pages.children %}
+	            {% if page.visible %}
+	            {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+	            	<li class="nav-item nav-item-toggable {{ current_page }}">
+		                <a class="nav-link" href="{{ page.url }}">
+		                   {{ page.menu }}<span class="sr-only">(current)</span>
+		              	</a>
+	            	</li>
+	            {% endif %}
+	        {% endfor %}
+	    </ul>
+    </div>
+    <div class="footer-text">
+    	<p>CREATED BY AKHOUAD ©2016. ALL RIGHTS RESERVED.</p>
+    </div>
+</footer>

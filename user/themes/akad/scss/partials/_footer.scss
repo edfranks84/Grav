@@ -1,0 +1,26 @@
+footer{
+	width: 100%;
+	background-color: #ddd;
+	padding: 2em;
+	.footer-nav{
+		display: flex;
+		margin-bottom: 1em;
+		span{
+			display: none;
+		}
+		a{
+			color: #666;
+			margin: 0 1em 0 0 ;
+			border-right: 1px solid #aaa;
+			padding: 0.35em 1em 0.35em 0;
+			display: inline-block;
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+	}
+}
+.footer-text{
+	p{
+		font-size: 10px;
+	}
+}

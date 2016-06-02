@@ -1,0 +1,21 @@
+<section class="latest-news">
+	<div class="latest-news-wrap">
+		{% for post in taxonomy.findTaxonomy({'category':'post'}).order('date', 'desc').slice(0, 4) %}
+			<div class="latest-news__item">
+				<h6>{{ post.date|date("M j, Y")}}</h6>
+				<h4><a href={{ post.url }}> {{post.title}}</a></h4>
+				<p>{{ post.content|striptags|truncate(200) }}
+				<a href={{ post.url }}>Read More »</a>
+			</div>
+		{% endfor %}
+
+		{% for post in page.find('/blog').children.order('date', 'desc').slice(0, 5) %}
+			<div class="latest-news__item">
+				<h6>{{ post.date|date("M j, Y")}}</h6>
+				<h4><a href={{ post.url }}> {{post.title}}</a></h4>
+				<h6><a href={{ post.url }}>Read More »</a></h6>
+			</div>
+		{% endfor %}
+
+	</div>
+</section>

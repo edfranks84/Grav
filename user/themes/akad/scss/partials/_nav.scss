@@ -1,0 +1,56 @@
+/* ---------------------------------------------- *\
+
+  Partial: nav
+
+  All navigation styles here. This is sort that we can try keep things seperated and easy to maintain. You can
+  include all global navigation styles here. 
+
+\* ---------------------------------------------- */
+
+.mobile-menu{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.95);
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	z-index: 5;
+	.active &{
+		display: flex;
+		@include respond-to(640){
+			display: none;
+		}
+	}
+	@include respond-to(640){
+		display: none;
+	}
+
+	.navigation{
+		display: block;
+		padding: 2em;
+		width: 100%;
+		 li{
+		 	display: block;
+		 	width: 100%;
+		 	a{
+		 		color: #fff;
+		 		padding: 1em;
+		 		font-size: 16px;
+		 		display: block;
+		 		border-bottom: 1px solid #222;
+		 		&:hover{
+		 			color: turquoise;
+		 		}
+		 	}
+		 	&:last-child{
+		 		a{
+		 			border-bottom: none;
+		 		}
+		 	}
+		 }
+	}
+}

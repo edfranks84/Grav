@@ -1,0 +1,25 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="content-wrap">
+
+	{{ page.content }}
+    <h2>Kevin Smith's Posts</h2>
+	
+	<div class="author-pages">
+
+		{% for child in page.collection %}
+		<div class="author-item">
+			{% set featured_image = child.media.images[child.header.image] %}
+			{% if featured_image %}
+				<img src="{{ featured_image.url }}">
+				
+			{% endif %}
+
+			<a href={{ child.url }}> {{child.title}}</a>
+		</div>
+		{% endfor %}
+	</div>
+
+</div>
+{% endblock %}

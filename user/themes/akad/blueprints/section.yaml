@@ -1,0 +1,44 @@
+title: sections
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/portfolio
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/portfolio
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        sections:
+          type: tab
+          title: Sections
+          fields:
+            header.sections:
+              name: sections
+              type: list
+              label: sections
+
+              fields:
+                .title:
+                  type: text
+                  label: title
+                .image:
+                  type: text
+                  label: image
+                .content:
+                  type: markdown
+                  label: content
+                .stuff:
+                  type: pagemediaselect
+                  label: stuff
+

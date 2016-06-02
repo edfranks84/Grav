@@ -1,0 +1,82 @@
+/* ---------------------------------------------- *\
+
+  Partial: buttons
+
+  This is a work-in-progress. Please deploy your own method or use my exaple below. 
+
+\* ---------------------------------------------- */
+
+.btn{
+	display: inline-block;
+
+	&--black{
+		// text, background, border
+		@include button-variant($black, transparent, $black);
+
+		&:hover{
+			@include button-variant($white, $base-color, $base-color);
+		}
+	}
+
+	&--grey{
+		// text, background, border
+		@include button-variant(darken($lightGrey, 60), darken($lightGrey, 20), darken($lightGrey, 40));
+
+		&:hover{
+			@include button-variant($white, $base-color, $base-color);
+		}
+	}
+
+	&--blue{
+		// text, background, border
+		@include button-variant($base-color, transparent, $base-color);
+
+		&:hover{
+			@include button-variant($comp-color, $white, $comp-color);
+		}
+	}
+}
+
+
+.btn{
+
+	&--small{
+		@include button-size(em(8), ms(1), em(16), 1, 0);
+	}
+
+	&--med{
+		@include button-size(em(14), ms(10), em(16), 1.2, 0);
+	}
+
+  	&--large{
+		@include button-size(em(16), ms(16), em(16), 1.2, 0);
+	}
+}
+
+.solid-btn{
+	padding: 0.4em 1.35em;
+	display: inline-block;
+	color: #fff;
+	font-weight: 700;
+	font-family: 'montserrat', sans-serif;
+	transition: all 200ms linear;
+	text-transform: uppercase;
+	&.turquoise{
+		background-color: turquoise;
+		&:hover{
+			background-color: darken(turquoise, 10%);
+			box-shadow: 0 3px 9px 0 rgba(0,0,0,0.1);
+			color: #fff;
+		}
+	}
+	&.white{
+		background-color: white;
+		color: turquoise;
+		&:hover{
+			background-color: darken(white, 10%);
+			box-shadow: 0 3px 9px 0 rgba(0,0,0,0.1);
+			color: turquoise;
+		}
+	}
+
+}
