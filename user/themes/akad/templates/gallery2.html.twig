@@ -1,0 +1,20 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {{ page.content }}
+
+    <ul>
+    {% for image in page.media.images %}
+    <li>
+        <div class="image-surround">
+            {{ image.html }}
+        </div>
+        <div class="image-info">
+            <h2>{{ image.meta.title }}</h2>
+            <p>{{ image.meta.description }}
+        </div>
+    </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

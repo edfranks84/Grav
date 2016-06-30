@@ -1,0 +1,18 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {{ page.content }}
+
+    <div class="galleries">
+        {% for p in page.collection %}
+        {% set first_image = p.media.images|first %}
+            <div class="galleries-item">
+            <div class="galleries-image">
+                <img src="{{ first_image.url }}">
+            </div>
+            <h2><a href={{ p.url }}>{{ p.title }}</a></h2>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+<section class="mod-gallery">
+	<div class="mod-gallery-title">
+		<h1>{{ page.header.title }}</h1>
+	</div>
+	<div class="mod-gallery-images">
+		{% for work in page.header.gallery %}
+
+			<div class="mod-gallery-image">
+				<img src="{{ page.media.images[work.image].url }}">
+				<div class="mod-gallery_item_hover">
+					<div class="item__title">
+						<span>{{ work.title }}</span>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>

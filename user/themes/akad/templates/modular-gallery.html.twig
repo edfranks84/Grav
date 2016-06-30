@@ -1,0 +1,10 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+ 	{{ page.content }}
+    <div class="galleries-wrap>
+        {% for module in page.collection() %}
+                {{ module.content }}
+        {% endfor %}
+    </div>
+{% endblock %}

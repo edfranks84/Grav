@@ -71,7 +71,7 @@ cache:
 
 twig:
   cache: false                               # Set to true to enable twig caching
-  debug: false                              # Enable Twig debug
+  debug: true                              # Enable Twig debug
   auto_reload: true                         # Refresh cache on changes
   autoescape: false                         # Autoescape Twig vars
   undefined_functions: true                 # Allow undefined functions
@@ -102,7 +102,7 @@ images:
   default_image_quality: 85                 # Default image quality to use when resampling images (85%)
   cache_all: false                          # Cache all image by default
   cache_perms: '0755'                       # MUST BE IN QUOTES!! Default cache folder perms. Usually '0755' or '0775'
-  debug: false                              # Show an overlay over images indicating the pixel depth of the image when working with retina for example
+  debug: true                              # Show an overlay over images indicating the pixel depth of the image when working with retina for example
 
 media:
   enable_media_timestamp: false             # Enable media timetsamps
